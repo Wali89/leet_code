@@ -10,14 +10,15 @@ var convert = function(s, numRows) {
         
         rows[y].push(char);
         
+         if(y === numRows - 1) increment = false;
+         if(y === 0) increment = true
+         y = increment ? y+1 : y-1
          if(increment) {
              if (y === numRows-1) {
-                 increment = false;
                  y--
              } else y ++;
          } else {
              if (y===0) {
-                 increment = true;
                  y++
              } else {
                  y--
